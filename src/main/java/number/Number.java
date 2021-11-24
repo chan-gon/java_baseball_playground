@@ -33,29 +33,6 @@ public class Number {
             String inputNum = scanner.nextLine();
             String[] inputNumArr = inputNum.split("");
 
-            Set<Integer> numByComputer = computerGenerateDistinctNum();
-            List<Integer> list = new ArrayList<>(numByComputer);
-
-            for(int i = 0; i < inputNumArr.length; i++) {
-                for(int j = 0; j < list.size(); j++) {
-                    if(inputNumArr[i].equals(list.get(j).toString()) && i == j) {
-                        System.out.println("같은 자리에 같은 수가 일치 = " + i + " / " + j);
-                        System.out.println("사용자 : " + Arrays.toString(inputNumArr));
-                        System.out.println("컴퓨터 : " + list);
-                    }
-                    if(inputNumArr[i].equals(list.get(j).toString())) {
-                        System.out.println("다른 자리에 있지만 숫자가 일치 = " + i + " / " + j);
-                        System.out.println("사용자 : " + Arrays.toString(inputNumArr));
-                        System.out.println("컴퓨터 : " + list);
-                    }
-                    if(!inputNumArr[i].equals(list.get(j).toString())) {
-                        System.out.println("낫싱");
-                        System.out.println("사용자 : " + Arrays.toString(inputNumArr));
-                        System.out.println("컴퓨터 : " + list);
-                    }
-                }
-            }
-
             if(Arrays.stream(inputNumArr).distinct().count() != 3) {
                 System.out.println("중복값은 입력할 수 없습니다.");
                 continue;
@@ -68,6 +45,34 @@ public class Number {
                 System.out.println("1 - 9 까지의 숫자만 입력 가능합니다.");
                 continue;
             }
+
+            Set<Integer> numByComputer = computerGenerateDistinctNum();
+            List<Integer> list = new ArrayList<>(numByComputer);
+
+            for(int i = 0; i < inputNumArr.length; i++) {
+                for(int j = 0; j < list.size(); j++) {
+                    if(inputNumArr[i].equals(list.get(j).toString()) && i == j) {
+                        System.out.println("같은 자리에 같은 수가 일치 = " + i + " / " + j);
+                        System.out.println("사용자 : " + Arrays.toString(inputNumArr));
+                        System.out.println("컴퓨터 : " + list);
+                        playerInputDistinctNum();
+                    }
+                    if(inputNumArr[i].equals(list.get(j).toString())) {
+                        System.out.println("다른 자리에 있지만 숫자가 일치 = " + i + " / " + j);
+                        System.out.println("사용자 : " + Arrays.toString(inputNumArr));
+                        System.out.println("컴퓨터 : " + list);
+                        playerInputDistinctNum();
+                    }
+                    if(inputNumArr[i].equals(list.get(j).toString())) {
+                        System.out.println("낫싱");
+                        System.out.println("사용자 : " + Arrays.toString(inputNumArr));
+                        System.out.println("컴퓨터 : " + list);
+                        playerInputDistinctNum();
+                    }
+                }
+            }
+
+
         }
     }
 }
