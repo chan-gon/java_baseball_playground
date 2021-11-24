@@ -13,12 +13,9 @@ public class Number {
         return NUM_REGEX;
     }
 
-    /*
-    * 중복되지 않는 1 ~ 9 범위의 세 자리 임의의 숫자를 생성하는 메소드
-    * */
     public Set<Integer> computerGenerateDistinctNum(){
         Random rd = new Random();
-        Set<Integer> numbers = new TreeSet<>();
+        Set<Integer> numbers = new HashSet<>();
         while(numbers.size() != 3) {
             numbers.add(rd.nextInt(max - min + 1) + min);
         }
@@ -34,8 +31,31 @@ public class Number {
         while(flag) {
             System.out.print("숫자를 입력해 주세요 : ");
             String inputNum = scanner.nextLine();
-
             String[] inputNumArr = inputNum.split("");
+
+            Set<Integer> numByComputer = computerGenerateDistinctNum();
+            List<Integer> list = new ArrayList<>(numByComputer);
+
+            for(int i = 0; i < inputNumArr.length; i++) {
+                for(int j = 0; j < list.size(); j++) {
+                    if(inputNumArr[i].equals(list.get(j).toString()) && i == j) {
+                        System.out.println("같은 자리에 같은 수가 일치 = " + i + " / " + j);
+                        System.out.println("사용자 : " + Arrays.toString(inputNumArr));
+                        System.out.println("컴퓨터 : " + list);
+                    }
+                    if(inputNumArr[i].equals(list.get(j).toString())) {
+                        System.out.println("다른 자리에 있지만 숫자가 일치 = " + i + " / " + j);
+                        System.out.println("사용자 : " + Arrays.toString(inputNumArr));
+                        System.out.println("컴퓨터 : " + list);
+                    }
+                    if(!inputNumArr[i].equals(list.get(j).toString())) {
+                        System.out.println("낫싱");
+                        System.out.println("사용자 : " + Arrays.toString(inputNumArr));
+                        System.out.println("컴퓨터 : " + list);
+                    }
+                }
+            }
+
             if(Arrays.stream(inputNumArr).distinct().count() != 3) {
                 System.out.println("중복값은 입력할 수 없습니다.");
                 continue;
