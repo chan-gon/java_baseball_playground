@@ -49,30 +49,39 @@ public class Number {
             Set<Integer> numByComputer = computerGenerateDistinctNum();
             List<Integer> list = new ArrayList<>(numByComputer);
 
+            int strikeCnt = 0;
+            int ballCnt = 0;
+
             for(int i = 0; i < inputNumArr.length; i++) {
                 for(int j = 0; j < list.size(); j++) {
                     if(inputNumArr[i].equals(list.get(j).toString()) && i == j) {
-                        System.out.println("같은 자리에 같은 수가 일치 = " + i + " / " + j);
                         System.out.println("사용자 : " + Arrays.toString(inputNumArr));
                         System.out.println("컴퓨터 : " + list);
+
+                        strikeCnt++;
+                        System.out.println(strikeCnt + " 스트라이크");
                         playerInputDistinctNum();
                     }
                     if(inputNumArr[i].equals(list.get(j).toString())) {
-                        System.out.println("다른 자리에 있지만 숫자가 일치 = " + i + " / " + j);
                         System.out.println("사용자 : " + Arrays.toString(inputNumArr));
                         System.out.println("컴퓨터 : " + list);
+
+                        ballCnt++;
+                        System.out.println(ballCnt + " 볼");
                         playerInputDistinctNum();
                     }
                     if(inputNumArr[i].equals(list.get(j).toString())) {
+                        System.out.println("사용자 : " + Arrays.toString(inputNumArr));
+                        System.out.println("컴퓨터 : " + list);
                         System.out.println("낫싱");
-                        System.out.println("사용자 : " + Arrays.toString(inputNumArr));
-                        System.out.println("컴퓨터 : " + list);
                         playerInputDistinctNum();
                     }
                 }
             }
-
-
         }
+    }
+
+    public void showResult() {
+
     }
 }
