@@ -19,6 +19,13 @@ public class Player {
         String inputBeforeGame = scanner.nextLine();
         System.out.println("컴퓨터 : " + computerNum);
 
+        if(!inputBeforeGame.matches(numberPattern.getNUM_REGEX().toString())) {
+            System.out.println("1 ~ 9 범위의 숫자만 입력하세요.");
+        }
+        if(inputBeforeGame.charAt(0) == inputBeforeGame.charAt(1) || inputBeforeGame.charAt(1) == inputBeforeGame.charAt(2)) {
+            System.out.println("중복되는 숫자를 입력할 수 없습니다.");
+        }
+
         for (int i = 0; i < inputBeforeGame.length(); i++) {
             if(computerNum.charAt(i) == inputBeforeGame.charAt(i)) {
                 strike++;
