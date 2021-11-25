@@ -7,58 +7,42 @@ public class Player {
     Operator operator = new Operator();
     Computer computer = new Computer();
 
-    public void playerInputDistinctNum() {
+    public void gameStart() {
+        int strike = 0;
+        int ball = 0;
+
+        String computerNum = computer.computerGenerateDistinctNum();
+
         Scanner scanner = new Scanner(System.in);
-        boolean flag = true;
 
-        while(flag) {
-            System.out.print("숫자를 입력해 주세요 : ");
-            String inputNum = scanner.nextLine();
-            String[] inputNumArr = inputNum.split("");
+        System.out.print("숫자를 입력해 주세요 : ");
+        String inputBeforeGame = scanner.nextLine();
+        System.out.println("컴퓨터 : " + computerNum);
 
-            if(Arrays.stream(inputNumArr).distinct().count() != 3) {
-                System.out.println("중복값은 입력할 수 없습니다.");
-                continue;
+        for (int i = 0; i < 3; i++) {
+            if(computerNum.charAt(i) == inputBeforeGame.charAt(i)) {
+                strike++;
             }
-            if(inputNum.length() > 3 || inputNum.length() < 3) {
-                System.out.println("3자리 숫자만 입력 가능합니다.");
-                continue;
-            }
-            if(!inputNum.matches(operator.getNUM_REGEX().toString())) {
-                System.out.println("1 - 9 까지의 숫자만 입력 가능합니다.");
-                continue;
-            }
-
-            Set<Integer> numByComputer = computer.computerGenerateDistinctNum();
-            List<Integer> list = new ArrayList<>(numByComputer);
-
-            int strikeCnt = 0;
-            int ballCnt = 0;
-
-            for(int i = 0; i < inputNumArr.length; i++) {
-                for(int j = 0; j < list.size(); j++) {
-                    if(inputNumArr[i].equals(list.get(j).toString()) && i == j) {
-                        System.out.println("사용자 : " + Arrays.toString(inputNumArr));
-                        System.out.println("컴퓨터 : " + list);
-
-                        strikeCnt++;
-                        playerInputDistinctNum();
-                    }
-                    if(inputNumArr[i].equals(list.get(j).toString())) {
-                        System.out.println("사용자 : " + Arrays.toString(inputNumArr));
-                        System.out.println("컴퓨터 : " + list);
-
-                        ballCnt++;
-                        playerInputDistinctNum();
-                    }
-                    if(inputNumArr[i].equals(list.get(j).toString())) {
-                        System.out.println("사용자 : " + Arrays.toString(inputNumArr));
-                        System.out.println("컴퓨터 : " + list);
-                        System.out.println("낫싱");
-                        playerInputDistinctNum();
-                    }
-                }
+            if(computerNum.contains(String.valueOf(inputBeforeGame.charAt(i)))) {
+                ball++;
             }
         }
+        System.out.println(ball + "볼 " + strike + "스트라이크 ");
+
+        if (strike == 3) {
+            System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
+            System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+
+            int inputAfterGame = scanner.nextInt();
+
+            if (inputAfterGame == 1) {
+               new Player().gameStart();
+               return;
+            }
+            if (inputAfterGame == 2) {
+                return;
+            }
+        }
+        gameStart();
     }
 }
