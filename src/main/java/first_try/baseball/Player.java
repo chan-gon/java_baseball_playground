@@ -1,28 +1,11 @@
-package number;
+package first_try.baseball;
 
 import java.util.*;
-import java.util.regex.Pattern;
-import java.util.stream.Stream;
 
-public class Number {
-    private Pattern NUM_REGEX = Pattern.compile("^[1-9]*$");
-    private int min = 1;
-    private int max = 9;
+public class Player {
 
-    public Pattern getNUM_REGEX() {
-        return NUM_REGEX;
-    }
-
-    public Set<Integer> computerGenerateDistinctNum(){
-        Random rd = new Random();
-        Set<Integer> numbers = new HashSet<>();
-        while(numbers.size() != 3) {
-            numbers.add(rd.nextInt(max - min + 1) + min);
-        }
-        if(NUM_REGEX.matcher(numbers.toString()).find()) throw new IllegalArgumentException();
-
-        return numbers;
-    }
+    Operator operator = new Operator();
+    Computer computer = new Computer();
 
     public void playerInputDistinctNum() {
         Scanner scanner = new Scanner(System.in);
@@ -41,12 +24,12 @@ public class Number {
                 System.out.println("3자리 숫자만 입력 가능합니다.");
                 continue;
             }
-            if(!inputNum.matches(NUM_REGEX.toString())) {
+            if(!inputNum.matches(operator.getNUM_REGEX().toString())) {
                 System.out.println("1 - 9 까지의 숫자만 입력 가능합니다.");
                 continue;
             }
 
-            Set<Integer> numByComputer = computerGenerateDistinctNum();
+            Set<Integer> numByComputer = computer.computerGenerateDistinctNum();
             List<Integer> list = new ArrayList<>(numByComputer);
 
             int strikeCnt = 0;
@@ -59,7 +42,6 @@ public class Number {
                         System.out.println("컴퓨터 : " + list);
 
                         strikeCnt++;
-                        System.out.println(strikeCnt + " 스트라이크");
                         playerInputDistinctNum();
                     }
                     if(inputNumArr[i].equals(list.get(j).toString())) {
@@ -67,7 +49,6 @@ public class Number {
                         System.out.println("컴퓨터 : " + list);
 
                         ballCnt++;
-                        System.out.println(ballCnt + " 볼");
                         playerInputDistinctNum();
                     }
                     if(inputNumArr[i].equals(list.get(j).toString())) {
@@ -79,9 +60,5 @@ public class Number {
                 }
             }
         }
-    }
-
-    public void showResult() {
-
     }
 }

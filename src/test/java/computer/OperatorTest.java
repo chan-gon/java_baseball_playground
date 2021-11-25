@@ -1,13 +1,12 @@
-package number;
+package computer;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
+import first_try.baseball.Operator;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -16,15 +15,12 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
-import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
-class NumberTest {
+class OperatorTest {
 
-    Number number;
+    Operator number;
 
     public static InputStream generatePlayerInput(String input) {
         return new ByteArrayInputStream(input.getBytes());
@@ -45,7 +41,7 @@ class NumberTest {
 
     @BeforeEach
     void setNum(){
-        number = new Number();
+        number = new Operator();
     }
 
     @DisplayName("상대방(컴퓨터)이 1-9 범위의 중복되지 않는 세 자리 임의의 숫자를 생성하는지 테스트")
