@@ -1,4 +1,3 @@
-import first_try.baseball.Operator;
 import first_try.baseball.Player;
 
 public class Main {

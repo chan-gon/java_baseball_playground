@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Player {
 
-    Operator operator = new Operator();
+    NumberPattern numberPattern = new NumberPattern();
     Computer computer = new Computer();
 
     public void gameStart() {
@@ -19,7 +19,7 @@ public class Player {
         String inputBeforeGame = scanner.nextLine();
         System.out.println("컴퓨터 : " + computerNum);
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < inputBeforeGame.length(); i++) {
             if(computerNum.charAt(i) == inputBeforeGame.charAt(i)) {
                 strike++;
             }
@@ -27,7 +27,8 @@ public class Player {
                 ball++;
             }
         }
-        System.out.println(ball + "볼 " + strike + "스트라이크 ");
+        System.out.print(ball > 0 ? ball + "볼 " : "");
+        System.out.println(strike > 0 ? strike + "스트라이크" : "");
 
         if (strike == 3) {
             System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
