@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="number.NumberTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-25T08:21:52" hostname="DESKTOP-VAJ5L5G" time="0.154">
-  <properties/>
-  <testcase name="상대방(컴퓨터)이 1-9 범위의 중복되지 않는 세 자리 임의의 숫자를 생성하는지 테스트" classname="number.NumberTest" time="0.154"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

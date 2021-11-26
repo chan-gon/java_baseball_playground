@@ -22,9 +22,6 @@ public class Player {
         if(!inputBeforeGame.matches(numberPattern.getNUM_REGEX().toString())) {
             System.out.println("1 ~ 9 범위의 숫자만 입력하세요.");
         }
-        if(inputBeforeGame.charAt(0) == inputBeforeGame.charAt(1) || inputBeforeGame.charAt(1) == inputBeforeGame.charAt(2)) {
-            System.out.println("중복되는 숫자를 입력할 수 없습니다.");
-        }
 
         for (int i = 0; i < inputBeforeGame.length(); i++) {
             if(computerNum.charAt(i) == inputBeforeGame.charAt(i)) {
@@ -33,6 +30,10 @@ public class Player {
             if(computerNum.contains(String.valueOf(inputBeforeGame.charAt(i)))) {
                 ball++;
             }
+            if(inputBeforeGame.indexOf(inputBeforeGame.charAt(i)) == i) {
+                System.out.println("중복되는 숫자를 입력할 수 없습니다.");
+            }
+
         }
         System.out.print(ball > 0 ? ball + "볼 " : "");
         System.out.println(strike > 0 ? strike + "스트라이크" : "");
