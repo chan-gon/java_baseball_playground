@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="baseball.BallTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-26T10:23:24" hostname="DESKTOP-VAJ5L5G" time="0.075">
-  <properties/>
-  <testcase name="strike()" classname="baseball.BallTest" time="0.075"/>
-  <system-out><![CDATA[Ball 테스트 디폴트 객체값 = 4
-play 메서드로 변경한 Ball 객체값 = 4
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

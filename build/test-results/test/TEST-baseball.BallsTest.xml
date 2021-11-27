@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="baseball.BallsTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-11-27T11:27:35" hostname="DESKTOP-VAJ5L5G" time="0.087">
+  <properties/>
+  <testcase name="strike()" classname="baseball.BallsTest" time="0.08"/>
+  <testcase name="ball()" classname="baseball.BallsTest" time="0.002"/>
+  <testcase name="nothing()" classname="baseball.BallsTest" time="0.002"/>
+  <system-out><![CDATA[Ball 테스트 디폴트 객체값 = 1
+play 메서드로 변경한 Ball 객체값 = 1
+Ball 테스트 디폴트 객체값 = 1
+play 메서드로 변경한 Ball 객체값 = 2
+Ball 테스트 디폴트 객체값 = 2
+play 메서드로 변경한 Ball 객체값 = 2
+Ball 테스트 디폴트 객체값 = 1
+play 메서드로 변경한 Ball 객체값 = 4
+Ball 테스트 디폴트 객체값 = 2
+play 메서드로 변경한 Ball 객체값 = 4
+Ball 테스트 디폴트 객체값 = 3
+play 메서드로 변경한 Ball 객체값 = 4
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

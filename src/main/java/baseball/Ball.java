@@ -12,18 +12,18 @@ public class Ball {
         this.ballNum = ballNum;
     }
 
-    public NumStatus play(Ball ball) {
+    public BallStatus play(Ball ball) {
         System.out.println("Ball 테스트 디폴트 객체값 = " + ballNum);
         System.out.println("play 메서드로 변경한 Ball 객체값 = " + ball.ballNum);
 
         if(this.equals(ball)) {
-            return NumStatus.STRIKE;
+            return BallStatus.STRIKE;
         }
         // if(ballNum == ball.ballNum)
         if(ball.matchBallNum(ballNum)) { // 객체를 직접 가져오지 않고 객체에게 메시지를 보내는 것이 좋다.
-            return NumStatus.BALL;
+            return BallStatus.BALL;
         }
-        return NumStatus.NOTHING;
+        return BallStatus.NOTHING;
     }
 
     private boolean matchBallNum(int ballNum) {

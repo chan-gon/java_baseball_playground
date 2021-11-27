@@ -12,4 +12,11 @@ public class ValidationNumberTest {
         assertThat(ValidationNumber.validNum(0)).isFalse();
         assertThat(ValidationNumber.validNum(10)).isFalse();
     }
+
+    @Test
+    void 야구게임_숫자_자리수_검증() {
+        int numDigits = ValidationNumber.checkThreeDigits().length();
+        assertThat(numDigits).isEqualTo(3);
+    }
+
 }
