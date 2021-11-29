@@ -6,4 +6,7 @@ public enum BallStatus {
     BALL,
     NOTHING;
 
+    public boolean isNotNothing() {
+        return this != NOTHING;
+    }
 }

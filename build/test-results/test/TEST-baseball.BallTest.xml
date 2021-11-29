@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="baseball.BallTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-11-29T07:55:33" hostname="DESKTOP-VAJ5L5G" time="0.066">
-  <properties/>
-  <testcase name="같은 자리에 같은 숫자인 경우" classname="baseball.BallTest" time="0.063"/>
-  <testcase name="다른 자리에 같은 숫자인 경우" classname="baseball.BallTest" time="0.0"/>
-  <testcase name="모든 숫자가 다를 경우" classname="baseball.BallTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
