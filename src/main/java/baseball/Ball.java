@@ -1,20 +1,43 @@
 package baseball;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class Ball {
+    private final int position;
+    private final int ballNo;
 
-    public static BallStatus checkBall(int position, int number) {
+    public Ball(int position, int ballNo) {
+        this.position = position;
+        this.ballNo = ballNo;
+    }
 
-        Map<String, Integer> comNumber = Computer.generateNum();
+    public BallStatus play(Ball ball) {
 
-        if(comNumber.get("comPosition") == position && comNumber.get("comNumber") == number) {
+        if (this.equals(ball)) {
             return BallStatus.STRIKE;
         }
-        if(comNumber.get("comPosition") == position || comNumber.get("comNumber") == number) {
+        if (ball.matchBallNo(ballNo)) {
             return BallStatus.BALL;
         }
         return BallStatus.NOTHING;
+    }
+
+    private boolean matchBallNo(int ballNo) {
+        return this.ballNo == ballNo;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ball ball = (Ball) o;
+        return position == ball.position && ballNo == ball.ballNo;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(position, ballNo);
     }
 }
 
