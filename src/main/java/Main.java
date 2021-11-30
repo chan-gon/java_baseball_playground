@@ -20,7 +20,7 @@ public class Main {
         System.out.println(Calculator.SHARE_BIRTHDAY);*/
 
         Judgement judgement = new Judgement();
-        int cnt = judgement.correctCount(Arrays.asList(1, 2, 3), Arrays.asList(1, 2, 3));
-        System.out.println(cnt);
+        boolean result = judgement.hasPlace(Arrays.asList(1, 2, 3), 1, 2);
+        System.out.println(result);
     }
 }
