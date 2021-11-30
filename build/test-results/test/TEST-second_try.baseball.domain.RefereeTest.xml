@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="second_try.baseball.domain.RefereeTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-11-30T04:28:26" hostname="DESKTOP-VAJ5L5G" time="0.073">
+  <properties/>
+  <testcase name="three_strike()" classname="second_try.baseball.domain.RefereeTest" time="0.069"/>
+  <testcase name="ball()" classname="second_try.baseball.domain.RefereeTest" time="0.001"/>
+  <testcase name="nothing()" classname="second_try.baseball.domain.RefereeTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
