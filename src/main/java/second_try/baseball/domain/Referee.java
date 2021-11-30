@@ -15,6 +15,10 @@ public class Referee {
             }
         }
         int ball = cnt - strike;
+
+        if (cnt == 0) {
+            return "NOTHING";
+        }
         return ball + "볼 " + strike + "스트라이크";
     }
 }

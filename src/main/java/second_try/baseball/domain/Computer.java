@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class NumberGenerator {
+public class Computer {
     public List<Integer> createRandomNumber() {
         /*
          * 3개의 숫자가 담길 때까지
