@@ -2,6 +2,8 @@ package second_try.baseball.domain;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,6 +18,13 @@ class RefereeTest {
     @BeforeEach
     void setUp() {
         referee = new Referee();
+    }
+
+    @ParameterizedTest
+    @CsvSource({"1, 2, 3, 0볼 3스트라이크", "4, 5, 6, NOTHING", "2, 4, 5, 1볼 0스트라이크"})
+    void compare(int num1, int num2, int num3, String expected) {
+        String result = referee.compare(ANSWSER, Arrays.asList(num1, num2, num3));
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
