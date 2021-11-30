@@ -1,6 +1,9 @@
 import first_try.baseball.Player;
 import second_try.baseball.domain.Calculator;
+import second_try.baseball.domain.Judgement;
 import second_try.baseball.domain.NumberGenerator;
+
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,8 +19,8 @@ public class Main {
         System.out.println(Calculator.result);
         System.out.println(Calculator.SHARE_BIRTHDAY);*/
 
-        NumberGenerator numberGenerator = new NumberGenerator();
-
-        System.out.println(numberGenerator.createRandomNumber());
+        Judgement judgement = new Judgement();
+        int cnt = judgement.correctCount(Arrays.asList(1, 2, 3), Arrays.asList(1, 2, 3));
+        System.out.println(cnt);
     }
 }
