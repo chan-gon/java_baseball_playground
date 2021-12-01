@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -18,6 +19,7 @@ public class ComputerTest {
 
     @Test
     void 컴퓨터_세자리_숫자_생성_검증() {
+
         assertThat(computer.generateNumbers().size()).isEqualTo(3);
     }
 }

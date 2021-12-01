@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="third_try.baseball.PlayerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-12-01T08:22:18" hostname="DESKTOP-VAJ5L5G" time="0.067">
-  <properties/>
-  <testcase name="사용자_세자리_숫자_입력_검증()" classname="third_try.baseball.PlayerTest" time="0.067"/>
-  <system-out><![CDATA[숫자를 입력해 주세요 :]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
