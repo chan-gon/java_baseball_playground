@@ -28,6 +28,12 @@ public class Balls {
         return result;
     }
 
+    /*
+    * map을 통해 특정 데이터로 한정(변환)
+    * filter를 통해 NOTHING이 아닌 값만 걸러냄
+    * findFirst를 통해 stream의 가장 첫 번째 요소(값)을 가져옴
+    * orElse를 통해 위 조건에 해당되지 않을 경우 NOTHING을 리턴하도록 설정
+    * */
     public BallStatus play(Ball userBall) {
         return answers.stream()
                 .map(answer -> answer.play(userBall))

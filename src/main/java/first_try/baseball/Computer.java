@@ -7,7 +7,7 @@ import java.util.Set;
 public class Computer {
 
    private int min = 1;
-   private int max = 9;
+    private int max = 9;
 
     public String computerGenerateDistinctNum(){
         Random rd = new Random();
