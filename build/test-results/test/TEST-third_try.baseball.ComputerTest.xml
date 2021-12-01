@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="third_try.baseball.ComputerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-12-01T07:52:25" hostname="DESKTOP-VAJ5L5G" time="0.166">
-  <properties/>
-  <testcase name="컴퓨터_세자리_숫자_생성_검증()" classname="third_try.baseball.ComputerTest" time="0.166"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
