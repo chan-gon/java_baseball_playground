@@ -2,6 +2,12 @@ package third_try.baseball;
 
 import java.util.List;
 
+/*
+ * 사용자가 입력한 숫자 유효성 확인 클래스
+ * 입력한 숫자 자릿수, 범위, 중복 여부 확인
+ *
+ * 게임 다시 시작 시 입력 숫자 유효성 확인 메소드도 추가했다(restartNumberCheck)
+ * */
 public class NumberValidator {
 
     static final int MIN_NUM = 1;

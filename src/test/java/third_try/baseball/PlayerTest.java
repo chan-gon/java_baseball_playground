@@ -18,4 +18,5 @@ public class PlayerTest {
     void 사용자_세자리_숫자_입력_검증() {
         assertThat(player.createInputNumbers().size()).isEqualTo(3);
     }
+
 }

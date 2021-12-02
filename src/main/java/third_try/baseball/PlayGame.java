@@ -4,6 +4,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+/*
+ * 숫자야구게임 실행에 관한 클래스
+ * checkNumber(), showResult() 메소드로 숫자를 평가한다
+ * playBaseballGame() 메소드가 실행 메소드이다
+ * */
 public class PlayGame {
 
     static final String FINISH_MESSAGE = "3개의 숫자를 모두 맞히셨습니다! 게임 종료";
@@ -15,7 +20,8 @@ public class PlayGame {
     GameStatus gameStatus;
 
     public void playBaseballGame() {
-        List<Integer> computerNumber = Arrays.asList(1, 2, 3);
+//        List<Integer> computerNumber = computer.generateNumbers();
+        List<Integer> computerNumber = Arrays.asList(1, 2, 3); // 테스트를 위한 임의 설정
         List<Integer> playerNumber = player.createInputNumbers();
         checkNumber(computerNumber, playerNumber);
     }
@@ -23,8 +29,6 @@ public class PlayGame {
     public void checkNumber(List<Integer> computerNumber, List<Integer> playerNumber) {
         int strike = 0;
         int ball = 0;
-        System.out.println("컴퓨터 = " + computerNumber);
-        System.out.println("사용자 = " + playerNumber);
 
         int cnt = judgeNumber.correctCount(computerNumber, playerNumber);
 

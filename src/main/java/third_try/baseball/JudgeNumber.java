@@ -2,6 +2,9 @@ package third_try.baseball;
 
 import java.util.List;
 
+/*
+ *컴퓨터 숫자와 사용자 숫자를 계산하는 클래스
+ * */
 public class JudgeNumber {
 
     public int correctCount(List<Integer> computer, List<Integer> player) {

@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/*
+ * 사용자 숫자 입력 클래스
+ * */
 public class Player {
 
     public List<Integer> createInputNumbers() {

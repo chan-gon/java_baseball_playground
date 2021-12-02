@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="third_try.baseball.NumberValidatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-12-02T05:36:08" hostname="DESKTOP-VAJ5L5G" time="0.063">
-  <properties/>
-  <testcase name="숫자_중복_검증()" classname="third_try.baseball.NumberValidatorTest" time="0.063"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
