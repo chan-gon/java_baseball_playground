@@ -1,13 +1,10 @@
 package third_try.baseball;
 
-import java.io.Console;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class PlayGame {
-
-    private int strike;
-    private int ball;
 
     static final String FINISH_MESSAGE = "3개의 숫자를 모두 맞히셨습니다! 게임 종료";
     static final String RESTART_MESSAGE = "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.";
@@ -18,17 +15,16 @@ public class PlayGame {
     GameStatus gameStatus;
 
     public void playBaseballGame() {
-        List<Integer> computerNumber = computer.generateNumbers();
+        List<Integer> computerNumber = Arrays.asList(1, 2, 3);
         List<Integer> playerNumber = player.createInputNumbers();
-        do {
-            strike = 0;
-            ball = 0;
-            checkNumber(computerNumber, playerNumber);
-        } while (!isFinish());
-        System.out.println(FINISH_MESSAGE);
+        checkNumber(computerNumber, playerNumber);
     }
 
     public void checkNumber(List<Integer> computerNumber, List<Integer> playerNumber) {
+        int strike = 0;
+        int ball = 0;
+        System.out.println("컴퓨터 = " + computerNumber);
+        System.out.println("사용자 = " + playerNumber);
 
         int cnt = judgeNumber.correctCount(computerNumber, playerNumber);
 
@@ -39,35 +35,40 @@ public class PlayGame {
             ball = cnt - strike;
         }
         String result = showResult(ball, strike, cnt);
-
         System.out.println(result);
+
+        if (strike == Integer.valueOf(GameStatus.FINISH.getStatus())) {
+            System.out.println(FINISH_MESSAGE);
+            gameRestart();
+        }
     }
 
     public String showResult(int ball, int strike, int cnt) {
         String result = "";
         if (ball > 0) {
-            result = ball + gameStatus.BALL.getStatus();
+            result += ball + gameStatus.BALL.getStatus();
         }
         if (strike > 0) {
-            result = strike + gameStatus.STRIKE.getStatus();
+            result += strike + gameStatus.STRIKE.getStatus();
         }
         if (cnt == 0) {
-            result = gameStatus.NOTHING.getStatus();
+            result += gameStatus.NOTHING.getStatus();
         }
         return result;
     }
 
-    public boolean isFinish() {
-        return strike == 3;
-    }
-
-    public boolean gameRestart() {
+    public void gameRestart() {
         System.out.println(RESTART_MESSAGE);
         Scanner scanner = new Scanner(System.in);
         String input = scanner.next();
         if (!NumberValidator.restartNumberCheck(input)) {
             throw new IllegalArgumentException();
         }
-        return input.equals(GameStatus.RESTART.getStatus());
+        if (input.equals(GameStatus.RESTART.getStatus())) {
+            playBaseballGame();
+        }
+        if (input.equals(GameStatus.EXIT.getStatus())) {
+            System.exit(0);
+        }
     }
 }
