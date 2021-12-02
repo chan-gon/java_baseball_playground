@@ -30,4 +30,8 @@ public class NumberValidator {
                 .count() == NUM_LENGTH;
     }
 
+    static boolean restartNumberCheck(String input) {
+        return input.equals(GameStatus.RESTART.getStatus()) || input.equals(GameStatus.EXIT.getStatus());
+    }
+
 }
