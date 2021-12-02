@@ -9,8 +9,8 @@ public class PlayGame {
 
     public String checkNumber(List<Integer> computerNumber, List<Integer> playerNumber) {
 
-/*        computerNumber = computer.generateNumbers();
-        playerNumber = player.createInputNumbers();*/
+        computerNumber = computer.generateNumbers();
+        playerNumber = player.createInputNumbers();
         int cnt = judgeNumber.correctCount(computerNumber, playerNumber);
 
         int strike = 0;

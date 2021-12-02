@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="third_try.baseball.PlayGameTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-12-01T14:53:21" hostname="DESKTOP-VAJ5L5G" time="0.083">
-  <properties/>
-  <testcase name="[1] 1, 2, 3, 3스트라이크" classname="third_try.baseball.PlayGameTest" time="0.075"/>
-  <testcase name="[2] 4, 5, 6, 낫싱" classname="third_try.baseball.PlayGameTest" time="0.001"/>
-  <testcase name="[3] 2, 4, 5, 1볼" classname="third_try.baseball.PlayGameTest" time="0.002"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
